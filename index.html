@@ -1,206 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono&subset=latin,cyrillic">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <title>Код и Магия</title>
+	<meta charset="UTF-8">
+	<title>Sedona-главная страница</title>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style2.css" rel="stylesheet">
 </head>
 <body>
+	<header class="main-header">
+		<nav class="main-navigation">
+			<ul class="list-main-navigation">
+				<li><a href="#">Информация</a></li>
+				<li><a href="#">Фото и видео</a></li>
+        <li><a href="#" class="header-logo" >
+        <img src="img/small-logo.png" alt="Логотип Седона">
+           </a></li>
+				<li><a href="#">Карта штата</a></li>
+				<li><a href="#">Гостиницы</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1 class="visually-hidden">Рассказ о Седоне</h1>
 
-<header>
-  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62
-        86">
-    <g id="wizard">
-      <g id="wizard-coat">
-        <polygon points="19 67 19 59 14 59 14 82 9 82 9 86 23 86 23 67 19 67"/>
-        <polygon points="19 59 19 67 23 67 23 86 48 86 48 54 19 54 19 59"/>
-      </g>
-      <g id="wizard-head">
-        <polygon points="48 86 53 86 53 15 58 15 58 10 62 10 62 5 58 5 58 10 48 10 48 5 43 5 43 10 48 10 48 14 48 86"
-                 fill="#be3827"/>
-        <polygon points="9 37 19 37 19 23 48 23 48 28 53 28 53 42 48 42 48 51 14 51 14 46 9 46 9 37"
-                 fill="#fbd868"/>
-        <rect x="33" y="39" width="10" height="5" fill="#bec1c3"/>
-        <rect x="14" y="37" width="5" height="9" fill="#bec1c3"/>
-        <polygon
-          points="48 39 48 44.34 43 44.34 43 49.69 33 49.69 33 44.34 29 44.34 29 48.62 23 48.62 23 53.97 29 53.97 29 59.31 33 59.31 33 64.66 38 64.66 38 70 43 70 43 64.66 48 64.66 48 53.97 53 53.97 53 48.62 57 48.62 57 39 48 39"
-          fill="#bec1c3"/>
-        <polygon
-          points="0 47 9 47 9 38 19 38 19 24 48 24 48 28 53 28 53 18 48 18 48 13 14 13 14 18 9 18 9 23 5 23 5 38 0 38 0 47"
-          fill="#bec1c3"/>
-      </g>
-      <g id="wizard-eyes">
-        <rect x="28" y="33" width="5" height="5"/>
-        <rect x="43" y="33" width="5" height="5"/>
-      </g>
-      <g id="wizard-hands">
-        <polygon points="19 67 19 59 14 59 14 82 9 82 9 86 23 86
-          23 67 19 67" fill="#fff" opacity="0.2"/>
-        <rect x="14" y="73" width="5" height="5"
-              fill="#fbd868"/>
-        <rect x="48" y="63" width="5" height="5" fill="#fbd868"/>
-        <rect x="48" width="10" height="10" fill="#3aa2ca"/>
-        <rect x="52" width="5" height="5" fill="#acd5fb"/>
-      </g>
-    </g>
-  </svg>
-  <div class="header-clouds"></div>
-  <div class="header-fence"></div>
-  <div class="header-tree"></div>
+		<!--секция приветствия -->
+		<section class="welcome">
+			<h2 class="visually-hidden">Приветствие Седоны </h2>
+			<img src="img/welcome.png" alt="Welcome">
+      <div class="background-bottom"></div>
+		</section>
 
-  <h1 class="header-title section-title">
-    Code&thinsp;and&thinsp;Magick
-    <img src="img/title-site.png" alt="Code and magick">
-  </h1>
-  <p class="header-description">
-    Это игра, где главного героя, которым вам предстоит управлять и изменять заклинаниями окружающий мир зовут
-    Пендальф Синий.
-    Вместе с ним вас ждет увлекательное приключение&hellip;
-  </p>
+		<!-- секция преимущества -->
+		<section class="advantage">
+			<h2 class="visually-hidden"> Преимущества Седоны</h2>
+			<p class="title">Седона - небольшой городок в Аризоне,<br> заслуживающий большего!</p>
+      <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
+      <ul class="advantage-list">
 
-  <div class="demo"></div>
+       <li class="advantage-1 " >
+          <div class="blue-background">
+            <h3>Настоящий<br>городок</h3>
+            <p>- №1 -</p>
+            <p>Седона - не   аттракцион для туристов,<br> там течет своя жизнь</p>
+          </div>
+          <div class="crop"><img src="img/advantage-1.jpg" width="800px"></div>
+       </li>
 
-  
-</header>
+         <!-- дополнительные преимущества-->
+         <li class="advantage-others">
+           <ul class="advantage-others-list">
+             <li class="advantage-others-1">
+               <img src="img/icon-house.svg">
+               <h3>Жилье</h3>
+               <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+             </li>
+             <li class="advantage-others-2">
+               <img src="img/icon-burger.svg">
+               <h3>Еда</h3>
+               <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+             </li>
+             <li class="advantage-others-3">
+               <img src="img/icon-gift.svg">
+               <h3>Сувениры</h3>
+               <p>Не только китайского, но и местного производства!</p>
+             </li>
+           </ul>
+         </li>
 
-<div class="overlay setup hidden">
-  <form class="setup-wizard-form"
-        method="post"
-        enctype="multipart/form-data"
-        autocomplete="off">
+         <li class="advantage-2">
+           <div class="blue-background">
+             <h3>Там есть<br>мост дьявола</h3>
+             <p>- №2 -</p>
+             <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+           </div>
+           <div class="crop"><img src="img/advantage-2.jpg" width="800px"></div>
+         </li>
 
-    <div class="setup-title">
-      <div class="setup-user">
-        <div class="upload">
-          <img class="setup-user-pic" src="./img/user-1.jpg"/>
-          <input type="file" name="avatar">
-        </div>
-        <label>
-          <input type="text" name="username"
-                 maxlength="25" required
-                 class="setup-user-name" value="Синий Пендальф"/>
-        </label>
-      </div>
+         <div class="association-3-4-5">
+         <li class="advantage-3">
+           <h3>Небольшая<br>площадь</h3>
+           <p>- №3 -</p>
+           <p>Все достопримечательности находятся очень близко</p>
+         </li>
 
-      <span class="setup-close">&times;</span>
-    </div>
+         <li class="advantage-4">
+           <h3>Красивая<br>дорога</h3>
+           <p>- №4 -</p>
+           <p>Ехать в Седону из Лас-Вегаса совсем не скучно</p>
+         </li>
 
+         <li class="advantage-5">
+           <h3>Мало<br>туристов</h3>
+           <p>- №5 -</p>
+           <p>Большинство едет в Гранд-Каньон и толпится там</p>
+         </li>
+         </div>
 
-    <div class="setup-artifacts-shop">
-      <div class="setup-artifacts-cell"><img src="img/icon-star.png" alt="Star" width="65" height="50" draggable="true">
-      </div>
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
+       </ul>
+		</section>
 
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
-      <div class="setup-artifacts-cell"></div>
-    </div>
+		<!-- Бронирование  -->
+		<section class="booking">
+			<h2 class="visually-hidden"> Выбор отеля</h2>
+			<b>Заинтересовались?</b>
+            <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+			<button class="form-booking">Поиск гостиницы в Седоне</button>
 
-    <div class="setup-player">
-      <div class="setup-wizard-appearance">
-        <div class="setup-wizard-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 86" class="setup-wizard">
-            <g class="wizard">
-              <use xlink:href="#wizard-coat" class="wizard-coat" style="fill: #6589a4"></use>
-              <use xlink:href="#wizard-head" class="wizard-head"></use>
-              <use xlink:href="#wizard-eyes" class="wizard-eyes"></use>
-              <use xlink:href="#wizard-hands" class="wizard-hands"></use>
-            </g>
-          </svg>
-        </div>
-        <input type="hidden" name="coat-color" value="rgb(101, 137, 164)">
-        <input type="hidden" name="eyes-color" value="black">
-      </div>
+			<!--форма для поиска-->
+			<form class="isually-hidden booking-form" action="https://echo.htmlacademy.ru" method="get">
+			      <label>Дата заезда:<input name="booking-arrival-date" type="date" value="2017-04-24"></label>
+            <label>Дата выезда:<input name="booking-date-of-departure" type="date" value="2017-07-04"></label>
+            <div class="people">
+            <label>Взрослые:<input name="booking-adults" type="number"  min="0" step="1" value="2"></label>
+            <label>Дети:<input name="booking-children" type="number"  min="0" step="1" value="0"></label>
+            </div>
+            <input class="search" type="submit" value="Найти">
+			</form>
+			<img class="map" width="1200" src="img/map.png">
+		</section>
+	</main>
 
-      <div class="setup-fireball-wrap">
-        <div class="setup-fireball"></div>
-        <input type="hidden" name="fireball-color" value="#ee4830">
-      </div>
-
-      <div class="setup-artifacts" dropzone="move">
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-        <div class="setup-artifacts-cell"></div>
-      </div>
-    </div>
-
-    <div class="setup-footer">
-      <div class="setup-similar hidden">
-
-        <h4 class="setup-similar-title">Похожие персонажи</h4>
-
-        <div class="setup-similar-list"><!--Список похожих персонажей--></div>
-      </div>
-
-      <button class="button setup-submit">Сохранить</button>
-    </div>
-  </form>
-</div>
-
-<footer>
-  <p><a href="http://htmlacademy.ru" class="footer-link"><img src="img/htmlacademy-logo.png" alt="HTML Academy"
-                                                              width="130"></p>
-</footer>
-
-<template id="similar-wizard-template" style="display: none">
-  <div class="setup-similar-item">
-    <div class="setup-similar-content">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 86" class="setup-similar-wizard">
-        <g class="wizard">
-          <use xlink:href="#wizard-coat" class="wizard-coat"></use>
-          <use xlink:href="#wizard-head" class="wizard-head"></use>
-          <use xlink:href="#wizard-eyes" class="wizard-eyes"></use>
-          <use xlink:href="#wizard-hands" class="wizard-hands"></use>
-        </g>
-      </svg>
-    </div>
-    <p class="setup-similar-label">Петр Петров</p>
-  </div>
-</template>
-<script>
-  var fireballSize =22;
-
-  var getFireballSpeed = function(left){
-  return left ? 5 : 2;
-    
-} ;
-  wizardSpeed = 3;
-  wizardWidth = 70;
-  getWizardHeight = function (x) {
-    return 1.337 *x
-  };
-  getWizardX = function(width){
-    return width/2
-  };
-  getWizardY = function(height){
-    return height/3
-  };
-  
-
-</script>
-<script src="js/stat.js"></script>
-<script src="js/game.js"></script>
-
+	<footer class="main-footer">
+		<a class="visitsedona" href="">#VISITSEDONA</a>
+		<ul class="footer-cosial-list">
+			<li class="twitter"><a href="#">
+        <span class="visually-hidden">твитер</span>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="15" viewBox="0 0 17 15"><image overflow="visible" width="17" height="15" xlink:href="t.png"/><path fill="#FFF" d="M10.95.144c1.685-.496 2.984.27 3.577 1.179.673-.231 1.331-.481 2.011-.708a2.345 2.345 0 0 1-.857 1.768c.685.17 1.304-.491 1.304-.491-.169 1-1.006 1.788-1.563 2.024-.231 6.75-3.175 11.217-10.077 11.082h-.446c-.41 0-4.164-.46-4.898-1.887 2.271.196 3.893-.422 4.693-1.177-.96-.3-2.679-.477-2.979-2.95.349.106.564.228 1.19.119C1.705 8.247.374 7.53.448 5.33c.285.328 1.067.536 1.34.472C1.085 5.561-.182 2.442.894.85c1.818 1.854 3.735 3.606 7.152 3.773C8.254 2.33 9.183.793 10.95.144z"/></svg>
+        </a>
+      </li>
+      <li class="facebook"><a href="#">
+        <span class="visually-hidden">фейсбук</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22"><path fill="#FFF" d="M12 4V0H8a4 4 0 0 0-4 4v4H0v4h4v10h4V12h4V8H8V4h4z"/></svg>
+        </a></li>
+        <li class="youtube"><a href="#">
+        <span class="visually-hidden">ютуб</span>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16"><image overflow="visible" width="20" height="16" xlink:href="youtube.png"/><path fill="#FFF" d="M17 0H3C1.35 0 0 1.35 0 3v10c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM6.027 11.998V4.002L15.014 8l-8.987 3.998z"/></svg>
+        </a>
+      </li>
+      </ul>
+       <a class="website" href="#"><p>Website by</p>
+       <img src="img/logo-htmlacademy.svg" width="115" height="41"   alt="Логотип HTML-academy"></a>
+	</footer>
 </body>
 </html>
