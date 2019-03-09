@@ -5,6 +5,10 @@ li {
 *{
     box-sizing: border-box;
 }
+.opacity{
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
 body {
     background: linear-gradient(27deg, rgb(21,21,21) 5px, 
     rgba(0,0,0,0) 5px),
@@ -95,6 +99,7 @@ body {
     background: linear-gradient(rgb(203, 205, 211),
                                 rgb(132, 132, 136)),
                                 rgb(174, 176, 182);
+    transition: all 300ms ease-in-out;
 }
 .item__text{
     transition: all 300ms ease-in-out;
@@ -106,7 +111,7 @@ body {
 
 
 /* обернул текст в тег "р",
- что ,s реализовать зачеркнутый текст на css */
+ что бы реализовать зачеркнутый текст на css */
 .item__chek ~ p {
     margin: 0;
     transition: all 300ms ease-in-out;
