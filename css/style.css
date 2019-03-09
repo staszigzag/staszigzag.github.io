@@ -97,6 +97,7 @@ body {
                                 rgb(174, 176, 182);
 }
 .item__text{
+    transition: all 300ms ease-in-out;
     /* display: none; */
 }
 .item__chek {
@@ -104,8 +105,20 @@ body {
     margin-right: 15px;
     margin-top: 10px;
 }
+.item__chek ~ p {
+    transition: all 300ms ease-in-out;
+}
+
+/* .item__text:has(.item__chek:checked) */
+.item__chek:checked ~ p {
+    text-decoration:line-through;
+    color: #f8f8f8;
+    transition: all 300ms ease-in-out;
+    text-shadow:1px 1px 1px  #0adb26;
+
+}
 .item__input {
-    display: none;
+    /* display: none; */
 
 }
 
@@ -138,19 +151,30 @@ body {
 }
 
 
-/* поле ввода */
+
+
+/* поле ввода реализованно в виде тега "p",для реализации 
+динамической высоты  */
+
 .input {
-    padding: 5px;
-    border: 2px solid rgb(82, 82, 85);
-    border-radius: 8px;
-    background: #e6e3e3 !important; 
-    outline: none; 
-    height: 35px; 
-    width: 100%; 
-    color: #14611e; 
-    font-size: 18px;
-    font-family: 'Bad Script', cursive, sans-serif; 
+    overflow: auto; 
+    word-wrap: break-word;
     font-weight: 700;
+    color: #135a1c;
+    background-color: rgb(212, 218, 207);
+    padding: 8px;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow:   2px 2px 8px -1px #070607;
+    width: 100%;
+    min-height: 40px;
+    
+   
+    
+}
+.input:focus {
+    background-color: rgb(234, 241, 234);
+    box-shadow: inset 2px 2px 8px -1px #070607 ;
 }
 
 
