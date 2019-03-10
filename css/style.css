@@ -103,6 +103,8 @@ body {
 }
 .item__text{
     transition: all 300ms ease-in-out;
+    width: 100%;
+    
     /* display: none; */
 }
 .item__chek {
@@ -115,6 +117,10 @@ body {
 .item__chek ~ p {
     margin: 0;
     transition: all 300ms ease-in-out;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: auto; 
+    /* max-width: 911px; */
 }
 .item__chek:checked ~ p {
     text-decoration:line-through;
@@ -125,6 +131,7 @@ body {
 }
 .item__input {
     /* display: none; */
+    flex-shrink: 1;
 
 }
 
@@ -134,7 +141,10 @@ body {
     justify-content:space-around;
 }
 .item__wraper {
+    display: flex;
+    /* align-items:  */
     flex-grow: 1;
+    overflow: auto;
 }
 .item__btn-change {
     margin-right: 3px;
@@ -166,6 +176,7 @@ body {
 динамической высоты  */
 
 .input {
+    flex-grow: 1;
     overflow: auto; 
     word-wrap: break-word;
     font-weight: 700;
@@ -177,6 +188,7 @@ body {
     box-shadow:   2px 2px 8px -1px #070607;
     width: 100%;
     min-height: 40px;
+    max-width: 911px;  /*если не назначить то кнопки уходят */
     outline: none;
 }
 .input:focus {

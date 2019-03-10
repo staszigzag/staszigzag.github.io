@@ -17,7 +17,8 @@ function changeItem(){
     inputItem.focus();
     this.innerText = "Сохранить";
     }else{
-        if(!(textItem.innerText == inputItem.innerText)){   //проверка на изменения
+        if((textItem.innerText != inputItem.innerText)&& (inputItem.innerText.trim() != "") ){
+            //проверка на изменения и пустую строку
             textItem.innerText = inputItem.innerText;
             parseListItemAndWriteLocacStorage ();
         }
