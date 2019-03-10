@@ -82,7 +82,7 @@ function parseListItemAndWriteLocacStorage (){
 }
 function writeInHTML(){
     var arrInfo = JSON.parse(localStorage.getItem("ToDoList"));
-    if(arrInfo.ToDoList == "no list item") return;
+    // if(arrInfo.ToDoList == "no list item") return;
     for( var key in arrInfo){
         var cloneTemplate = templateItem.cloneNode(true);
         cloneTemplate.querySelector(".item__text p").innerText = arrInfo[key].text;
@@ -101,7 +101,8 @@ function parseStartLocalStorage(){
     localListItem = JSON.parse(localStorage.getItem("ToDoList"));
     console.dir(localListItem);
     }else{
-    localStorage.setItem("ToDoList", '{"ToDoList":"no list item"}')
+    // localStorage.setItem("ToDoList", '{"ToDoList":"no list item"}')
+    localStorage.setItem("ToDoList", '{"0":{"status":false,"text":"беспробудную тупость, всегда легко спутать с гениальностью....   😈 😈 😈 "}}')
     console.dir("no");
     }
 }
