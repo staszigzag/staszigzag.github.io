@@ -17,10 +17,16 @@ function changeItem(){
     inputItem.focus();
     this.innerText = "Сохранить";
     }else{
-        textItem.innerText = inputItem.innerText;
+        if(!textItem.innerText == inputItem.innerText){   //проверка на изменения
+            textItem.innerText = inputItem.innerText;
+            parseListItemAndWriteLocacStorage ();
+        }//else{                               
+        
+       // }
         labelItem.style.display = "";
         inputItem.style.display = "none";
-        this.innerText = "Изменить"
+        this.innerText = "Изменить";
+        
     }
 }
 function deleteItem(evt){
@@ -28,15 +34,12 @@ function deleteItem(evt){
     // console.dir(this);
     var itemIslist = this.parentElement.parentElement; //получить задачу из списка
     itemIslist.classList.add("opacity");
-    setTimeout( function(){itemIslist.parentElement.removeChild(itemIslist)},500);
-}
-function saveItem(){
-   
+    setTimeout( function(){itemIslist.parentElement.removeChild(itemIslist);
+                            parseListItemAndWriteLocacStorage ();},400);
 }
 function putListener(element){
     element.querySelector(".item__btn-delete").addEventListener("click", deleteItem);
     element.querySelector(".item__btn-change").addEventListener("click", changeItem);
-    // element.querySelector(".item__btn-delete").addEventListener("click", deleteItem);
 }
 function creatItem(){ 
     var cloneTemplate = templateItem.cloneNode(true);
@@ -48,9 +51,12 @@ function creatItem(){
         }else{ 
         cloneTemplate.querySelector(".item__text p").innerText = text;
         putListener(cloneTemplate);
+        
         listItem.appendChild(cloneTemplate);
         inputAddItem.innerText = "";
         inputAddItem.focus();
+        parseListItemAndWriteLocacStorage ();
+        
     }
 }
 
@@ -58,3 +64,56 @@ function creatItem(){
 // creatItem
 // console.dir(cloneTemplate);
 btnAddItem.addEventListener("click", creatItem);
+document.addEventListener("change", parseListItemAndWriteLocacStorage );
+
+var arrItem
+var localListItem 
+
+function parseListItemAndWriteLocacStorage (){
+    var arrLi = document.querySelectorAll(".item");
+    var arrInfo = {} ; //??????????????????????????????????????????
+    for (var i = 0; i < arrLi.length; i++) {
+        var obj = {};
+        obj.status = arrLi[i].querySelector(".item__chek").checked;
+        obj.text = arrLi[i].querySelector(".item__text p").innerText;
+        arrInfo[i] = obj;
+    }
+    localStorage.setItem("ToDoList", JSON.stringify(arrInfo));
+// console.dir(JSON.parse(localStorage.getItem("ToDoList")));
+
+}
+function writeInHTML(){
+    var arrInfo = JSON.parse(localStorage.getItem("ToDoList"));
+    if(arrInfo.ToDoList == "no list item") return;
+    for( var key in arrInfo){
+        var cloneTemplate = templateItem.cloneNode(true);
+        cloneTemplate.querySelector(".item__text p").innerText = arrInfo[key].text;
+        cloneTemplate.querySelector(".item__chek").checked = arrInfo[key].status;
+        putListener(cloneTemplate);
+        listItem.appendChild(cloneTemplate);
+        // inputAddItem.innerText = "";
+        // inputAddItem.focus();
+    }
+
+}
+
+
+function parseStartLocalStorage(){
+    if(localStorage.getItem("ToDoList")){
+    localListItem = JSON.parse(localStorage.getItem("ToDoList"));
+    console.dir(localListItem);
+    }else{
+    localStorage.setItem("ToDoList", '{"ToDoList":"no list item"}')
+    console.dir("no");
+    }
+}
+
+
+parseStartLocalStorage();
+// parseListItemAndWriteLocacStorage ();
+writeInHTML();
+
+
+// console.dir({localStorage:"new", fgfg:"ff"} );
+// console.info({localStorage:"new", fgfg:"ff"} );
+// localStorage.new.z =2452254;
