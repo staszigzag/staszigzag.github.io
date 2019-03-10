@@ -17,12 +17,10 @@ function changeItem(){
     inputItem.focus();
     this.innerText = "Сохранить";
     }else{
-        if(!textItem.innerText == inputItem.innerText){   //проверка на изменения
+        if(!(textItem.innerText == inputItem.innerText)){   //проверка на изменения
             textItem.innerText = inputItem.innerText;
             parseListItemAndWriteLocacStorage ();
-        }//else{                               
-        
-       // }
+        }
         labelItem.style.display = "";
         inputItem.style.display = "none";
         this.innerText = "Изменить";
