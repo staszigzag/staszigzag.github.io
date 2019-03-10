@@ -124,7 +124,7 @@ body {
 
 }
 .item__input {
-    display: none;
+    /* display: none; */
 
 }
 
@@ -132,6 +132,9 @@ body {
     margin-top: 10px;
     display: flex;
     justify-content:space-around;
+}
+.item__wraper {
+    flex-grow: 1;
 }
 .item__btn-change {
     margin-right: 3px;
@@ -284,6 +287,7 @@ body {
         flex-direction: row;
     }
     .btn{
+        min-width: 125px;
         height: 40px; 
         flex-grow: 0;
     }
