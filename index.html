@@ -11,35 +11,32 @@
 <body>
     <main class="centerman">
         <div class="list">
-        <div class="list__title">
-            <h1 class="list__title-text">ToDo List</h1>
-        </div>
-        <ul class="list__wrapper">      
-        </ul>
-        <div class="creator-item list__creator-item">
-            <!-- <input class="input creator-item__input"  type="text"> -->
-            <p class="input creator-item__input" spellcheck="false" contenteditable="true"></p>
-            <button class="btn btn--big creator-item__btn-add">Добавить</button>
-        </div>
+            <div class="list__title">
+                <h1 class="list__title-text">ToDo List</h1>
+            </div>
+            <ul class="list__wrapper"></ul>
+            <div class="creator-item list__creator-item">
+                <p class="input creator-item__input" spellcheck="false" contenteditable="true"></p>
+                <button class="btn btn--big creator-item__btn-add">Добавить</button>
+            </div>
         </div>
     </main>
-        <template>
-            <li class="item list__item">
-                <div class="item__wraper">
-                    <!-- <input class="input item__input" type="text" > -->
-                    <p class="input item__input" style="display: none" spellcheck="false" contenteditable="true"></p>
-                    <label class="item__text">
-                        <input class="item__chek" type="checkbox">
-                        <span class="item__chek-new"></span>
-                        <p></p>
-                    </label>
-                </div>
-                <div class="item__wraper-btn">
-                    <button class="btn item__btn-change">Изменить</button>
-                    <button class="btn item__btn-delete"> Удалить</button>
-                </div>
-            </li>
-        </template>
+    <template>
+        <li class="item list__item">
+            <div class="item__wraper">
+                <p class="input item__input" style="display: none" spellcheck="false" contenteditable="true"></p>
+                <label class="item__text">
+                    <input class="item__chek" type="checkbox">
+                    <span class="item__chek-new"></span>
+                    <p></p>
+                </label>
+            </div>
+            <div class="item__wraper-btn">
+                <button class="btn item__btn-change">Изменить</button>
+                <button class="btn item__btn-delete"> Удалить</button>
+            </div>
+        </li>
+    </template>
     <script src="script.js"></script>
 </body>
 </html>
