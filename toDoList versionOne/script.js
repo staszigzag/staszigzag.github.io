@@ -4,7 +4,7 @@ var inputAddItem = document.getElementsByClassName("creator-item__input")[0];
 var listItem = document.getElementsByClassName("list__wrapper")[0];
 
 // изменить или сохранить элемент списка-------------------------------------------------------------------------------
-function changeItem(){
+function buttonChangeClickHandler(){
     var inputItem = this.parentElement.previousElementSibling.firstElementChild;
     var labelItem = inputItem.nextElementSibling;
     var textItem = labelItem.lastElementChild;
@@ -27,7 +27,7 @@ function changeItem(){
     }
 }
 // удалить элемент из списка задач-------------------------------------------------------------------------------------
-function deleteItem(){
+function buttonDeleteClickHandler(){
     var itemIslist = this.parentElement.parentElement; //получить элемент из списка
 
     itemIslist.classList.add("opacity");   //добавить класс с анимацией прозрачности
@@ -36,7 +36,7 @@ function deleteItem(){
                             },400); // анимация прозрачности длиться 300мс, а элемент удалим через 400мс
 }
 // создать новый элемент для списка -------------------------------------------------------------------------------------
-function creatItem(){ 
+function buttonAddClickHandler(){ 
     var cloneTemplate = templateItem.cloneNode(true); // глубокое копирование
     var text = inputAddItem.innerText;
 
@@ -52,10 +52,14 @@ function creatItem(){
         parseListItemAndWriteLocacStorage ();
         }
 }
+// сохранить изменения чекбоксов-------------------------------------------------
+function checkboxClickHandler(){
+    parseListItemAndWriteLocacStorage();
+}
 // повесить обработчики на кнопки нового элемента ------------------------------------------------------------------------
 function putListener(element){
-    element.querySelector(".item__btn-delete").addEventListener("click", deleteItem);
-    element.querySelector(".item__btn-change").addEventListener("click", changeItem);
+    element.querySelector(".item__btn-delete").addEventListener("click", buttonDeleteClickHandler);
+    element.querySelector(".item__btn-change").addEventListener("click", buttonChangeClickHandler);
 }
 // запись в LocacStorage---------------------------------------------------------------------------------------------------
 function parseListItemAndWriteLocacStorage (){
@@ -84,6 +88,6 @@ function parseStartLocalStorage(){
         listItem.appendChild(cloneTemplate);
     }
 }
-btnAddItem.addEventListener("click", creatItem); // обработка нажатия на добавить
-document.addEventListener("change", parseListItemAndWriteLocacStorage); // запись изменений при смене чекбоксов
+btnAddItem.addEventListener("click", buttonAddClickHandler); // обработка нажатия на добавить
+document.addEventListener("change", checkboxClickHandler); // запись изменений при смене чекбоксов
 parseStartLocalStorage(); //точка входа 

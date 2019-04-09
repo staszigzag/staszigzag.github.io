@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Тонировка в Выборге</title>
+</head>
+<body> 
+    <div id="app"  class="centerman" >
+        <header id="header" class="header">
+            <label class="header__btn-close btn-close" >
+                <input type="checkbox" class="btn-close__checkbox visuallyHidden" v-model="isMenu">
+                <span class="btn-close__title visuallyHidden">закрыть</span>
+                <span class="btn-close__bar bar1"></span>
+                <span class="btn-close__bar bar2"></span>
+                <span class="btn-close__bar bar3"></span>
+                <span class="btn-close__bar bar4"></span>
+            </label>
+            <nav class="header__nav nav " v-show="isMenu" v-on:click="isMenu = false">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#we">О нас</a></li>
+                    <li class="nav__item"><a href="#purpose">Применение тонировки</a></li>
+                    <li class="nav__item"><a href="#services">Услуги</a></li>
+                    <li class="nav__item"><a href="#types">Виды пленок</a></li>
+                    <li class="nav__item"><a href="#examples">Примеры работ</a></li>
+                    <li class="nav__item"><a href="#calc">Просчет стоимости</a></li>
+                    <li class="nav__item"><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="master">
+            <section class="parallax master__parallax">
+                <div class="parallax__back"></div>
+            </section> 
+
+            <h1 class="master__title">Тонирование автомобилей в Выборге</h1>
+
+            <section id="we" class="master__block-we block-info">
+                <h2 class="block-info__title">О нас</h2>
+                <p class="block-info__text">
+                Мы это команда профессионалов работающая в сфере детейлинга свыше 7 лет. За эти годы мы использовали километры пленки
+                и затонировали свыше тысячи машин. <br> Мы знаем свое дело и именно поэтому поможем вам подобрать нужный материал исходя из 
+                ваших пожеланий и отлично подходящий именно к вашему автомобилю!<br><br> В работе мы используем только качественные американские
+                материалы: Llumar, sun tek, aswf, Solartek.<br> <b>  Мы предложим вам лучшее соотношение цены и качестваю</b>
+                </p>
+            </section>
+
+            <section id="purpose" class="master__block-purpose block-info">
+                <h2 class="block-info__title">Для чего нужна тонировка?</h2>
+                <p class="block-info__text">
+                    Если вы устали от солнца, которое светит прямо в глаза, от того, что в салоне вашего автомобиля летом
+                    постоянно жарко и приходится включать кондиционер или открывать окна, если вас раздражают взгляды 
+                    других водителей или прохожих, заглядывающих в ваши окна, то вам срочно нужно тонировать стекла машины. 
+                    <br><br>
+                    Данный вид тюнинга является сравнительно недорогим и в тоже время полезным и заметным, кардинально изменяя
+                    внешний вид автомобиля.<br> Затемнение стекла позволяет не только украсить внешний вид автомобиля, но и оградить 
+                    салон от чрезмерного попадания солнечных лучей, выгорания внутренней отделки и вредного воздействия 
+                    ультрафиолетового излучения.
+                </p>
+            </section>
+
+            <section  id="services" class="master__block-services block-info">
+                <h2 class="block-info__title">Наши услуги</h2>
+                <ul class="block-info__list">
+                    <li v-on:click="openTypes(7)" class="block-info__item-list item">
+                        <h3 class="item__title">Тонирование</h3>
+                        <ul v-show="arrIsTypes[7]" class="item__list">
+                            <li class="item__item-list">автомобили (классическая черная пленка, атермальная, зеркальная, цветная, съёмная)</li>
+                            <li class="item__item-list">архитектурное тонирование (тонирование оконных стеклопакетов, витрины, балконы)</li>
+                        </ul>
+                    </li>
+                    <li v-on:click="openTypes(8)" class="block-info__item-list item">
+                        <h3 class="item__title">Бронирование</h3>
+                        <ul v-show="arrIsTypes[8]" class="item__list">
+                            <li class="item__item-list">автомобильные стекла</li>
+                            <li class="item__item-list">оконные стеклопакеты</li>
+                        </ul>
+                    </li>
+                    <li v-on:click="openTypes(9)" class="block-info__item-list item">
+                        <h3 class="item__title">Защита лобового стекла</h3>
+                        <ul v-show="arrIsTypes[9]" v-show="arrIsTypes[9]" class="item__list">
+                            <li class="item__item-list">защита лобового стекла автомобиля от сколов, потёртостей, трещин</li>
+                        </ul>
+                    </li>
+                    <li v-on:click="openTypes(10)" class="block-info__item-list item">
+                        <h3 class="item__title">Противоугонная маркировка стекол</h3>
+                        <ul v-show="arrIsTypes[10]" class="item__list">
+                            <li class="item__item-list">нанесение нестираемого номера вин на все стекла автомобиля</li>
+                        </ul>
+                    </li>
+                    <li v-on:click="openTypes(11)" class="block-info__item-list item">
+                        <h3 class="item__title">Брендирование, плоттерная резка виниловой пленки</h3>
+                        <ul v-show="arrIsTypes[11]" class="item__list">
+                            <li class="item__item-list">изготовление надписей и рисунков из виниловой самоклеющейся пленки для кузова и стекол авто</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section id="types" class="master__block-types block-info">
+                <h2 class="block-info__title">Виды пленок</h2>
+                <ul class="block-info__list">
+                    <li v-on:click="openTypes(0)" class="block-info__item-list item item--blue">
+                        <h3 class="item__title item__title--blue">Автомобильные тонировочные пленки</h3>
+                        <p v-show="arrIsTypes[0]" class="item__text">
+                            Классическая черная пленка. Такой вид пленки позволяет преобразить внешний вид вашей машины,
+                            увеличить прочностные характеристики стекол и защитить вас и ваших близких от пагубного воздействия ультрафиолета.
+                            Уменьшить нагрев салона. Сохранить интерьер вашего автомобиля и обеспечить вам комфорт и право на частную жизнь.
+                        </p>
+                    </li>
+                    <li v-on:click="openTypes(1)" class="block-info__item-list item item--blue">
+                        <h3 class="item__title item__title--blue">Съёмная тонировка</h3>
+                        <p v-show="arrIsTypes[1]" class="item__text">
+                            Силиконовая съёмная тонировка используется в основном для передних стекол автомобиля. Материал не имеет клеевого слоя,
+                            фиксация на стекле осуществляется благодаря статике. Такая пленка является многоразовой. За счёт своей простоты, водитель
+                            авто может самостоятельно снимать и устанавливать пленку. Время установки около 5 минут.
+                        </p>
+                    </li>
+                    <li v-on:click="openTypes(2)" class="block-info__item-list item item--blue">
+                        <h3 class="item__title item__title--blue">Атермальные пленки</h3>
+                        <p v-show="arrIsTypes[2]" class="item__text">
+                            Принцип работы атермальной плёнки достаточно прост - она принимает на себя большую часть солнечного тепла и передаёт его стёклам.
+                            Главное отличие от обычных тонирующих плёнок в том, что она задерживает не только ультрафиолет, но и более 60% инфракрасного (теплового) 
+                            излучения солнца, при этом оставаясь практически прозрачной для видимого спектра излучения - 80% светопропускания, - что на 10% меньше ГОСТа. 
+                            Такой процент позволяет смело клеить её на любые автостёкла не нарушая требований ГОСТа - 70%. 
+                        </p>
+                    </li>
+                    <li v-on:click="openTypes(3)" class="block-info__item-list item item--blue">
+                        <h3 class="item__title item__title--blue">Пленки хамелеон</h3>
+                        <p v-show="arrIsTypes[3]" class="item__text">
+                            Цветная, зеркальная, мистик, дубай, тонирование автомобиля такими пленками применяется для придания стеклам определенного цвета
+                            (синий, зеленый, красный, серебристый и т.д.) . После наклеивания такой пленки стекла автомобиля приобретают дизайнерский эффект, 
+                            а также позволяет сделать оттенок стекла под цвет кузова авто. 
+                        </p>
+                    </li>
+                    <li v-on:click="openTypes(4)" class="block-info__item-list item item--blue">
+                        <h3 class="item__title item__title--blue">Архитектурные пленки</h3>
+                        <p v-show="arrIsTypes[4]" class="item__text">
+                            Архитектурные пленки способны изменить внешний вид здания и укрыть от палящего солнечного света, помешать выгоранию предметов внутренней
+                            обстановки или одежды в витринах магазинов. С помощью современных качественных архитектурных пленок вы можете значительно сэкономить
+                            на кондиционировании летом или обогреве зимой.
+                        </p>
+                    </li>
+                    <li v-on:click="openTypes(5)" class="block-info__item-list item item--blue">
+                        <h3 class="item__title item__title--blue">Пленка для бронирования стекол</h3>
+                        <p v-show="arrIsTypes[5]" class="item__text">
+                            Бронирование осуществляется установкой самоклеющейся пленки на внутреннюю часть стекла. Такой вид пленки значительно увеличивает прочность стекла,
+                            а при разбитии позволяет удержать все осколки на пленке. Удерживая осколки, пленка затрудняет доступ в салон автомобиля. 
+                            Также ударопрочная пленка создает надежный барьер между Вами и стеклом автомобиля в случае аварии.
+                        </p>
+                    </li>
+                    <li v-on:click="openTypes(6)" class="block-info__item-list item item--blue">
+                        <h3 class="item__title item__title--blue">Защита лобового стекла</h3>
+                        <p v-show="arrIsTypes[6]" class="item__text">
+                            Пленка устанавливается на внешнюю поверхность лобового стекла. Такая пленка позволяет сохранить лобовое стекло от появления затертостей
+                            и царапин от щеток стеклоочистителей, значительно сократить вероятность появления сколов, трещин, царапин и повреждений от повседневной 
+                            эксплуатации на лобовом стекле автомобиля.
+                        </p>
+                    </li>
+                </ul>  
+            </section>
+
+            <section id="examples" class="master__block-examples block-info">
+                <h2 class="block-info__title">Примеры работ</h2>
+                <article ref="search" class="block-info__gallery gallery">  <!-- блок галереи -->
+                    <ul class="gallery__pager">
+                        <!-- отрисовывает кнопки пагинатора используя их количество из вычесляемого свойчтва -->
+                        <li v-for="n in contItemPager" class="gallery__item-pager">
+                            <!-- если кнопка совпадает с текущей то активный цвет фона -->
+                            <button  v-bind:style="{ backgroundColor: n == currentItemPager?'#cf2e33':'#283545' }"
+                            v-on:click="currentItemPager = n">{{n}}</button>
+                        </li>
+                    </ul>
+                    <p class="gallery__title">
+                        фотографий  на странице:
+                        <select v-model="contFotoPage" >
+                            <option>4</option>
+                            <option>6</option>
+                            <option>8</option>
+                            <option>10</option>
+                        </select>
+                    </p>
+                    <div class="gallery__list-img"> 
+                        <!-- цикл отрисовки фото из массива -->
+                        <div v-for="photo in currentArrFoto"
+                        class="gallery__item-img" 
+                        v-bind:style="{ backgroundImage: 'url(' + photo.urlLittleFoto + ')' }"
+                        v-on:click=" showPhoto(photo.id)"></div>
+                    </div>
+                    <div v-show="isShowPhoto" v-on:click="closeFoto"  class="gallery__overlay"></div>  <!--  это затемнение -->
+                    <div v-show="isShowPhoto" v-on:click="closeFoto" class="gallery__big-img">  <!--  это большое изображение -->
+                        <img v-bind:src="currentBigFoto" alt="фотография выполненной работы" >
+                        <button v-on:click.stop.prevent="showPhoto(currentIdFoto == contFoto?'no':currentIdFoto + 1)" class="gallery__next">вперед</button>
+                        <button v-on:click.stop.prevent="showPhoto(currentIdFoto == 1?'no':currentIdFoto - 1)" class="gallery__prev">назад</button>
+                        <div class="gallery__status">{{currentIdFoto}} / {{contFoto}} </div>
+                    </div>  
+                </article>
+            </section>
+
+            <section id="calc" class="master__block-calc block-info">
+                <h2  class="block-info__title">Просчет стоимости</h2>
+                <article  class="block-info__calc calc">
+                    <div class="calc__setting">   
+                        <p>
+                            выберите класс авто:
+                            <select class="calc__class-avto" v-model="classAvto" >
+                                <option value=1>малый класс и мини</option>
+                                <option value=2>средний класс и седан</option>
+                                <option value=3>бизнесс класс и универсал</option>
+                                <option value=4>премиум</option>
+                                <option value=5>кроссоверы</option>
+                                <option value=6>микроавтобусы</option>
+                            </select>
+                        </p>
+                        <p class="calc__text" v-show="classAvto == 1">Гольф класс 3двери, Opel astra, Hyundai solaris,  KIA Picanto, Opel Corsa, Kia Rio, Chevrolet  Spark, Ford Fiesta и т.д </p>
+                        <p class="calc__text" v-show="classAvto == 2">Гольф класс 5дверей, Mazda 3, Ford focus, Opel Astra, Toyota corolla, Skoda octavia, Lada, Mitsubishi Lancer, Volkswagen Polo, Chevrolet Cruze, Honda Civic и т.д </p>
+                        <p class="calc__text" v-show="classAvto == 3">Tayota camry, Honda accord, Skoda Superb, Mazda 6, Ford Mondeo, Nissan Teana, Volkswagen Passat, Opel Insignia, Mercedes E-klasse, BMW3 и т.д</p>
+                        <p class="calc__text" v-show="classAvto == 4">Mercedes S-klasse; BMW 5, 7; Audi A6, A8; Porsche Panamera; Lexus LS; VOLVO S80; Hyundai EQUUS</p>
+                        <p class="calc__text" v-show="classAvto == 5">3х дверные джипы, Toyota RAV 4; Hyundai ix35; KIA Sportage; Nissan X-Trail; Nissan Qashqai; Honda CR-V; Renault Duster, VW Tiguan; Audi Q3; BMW X3</p>
+                        <p class="calc__text" v-show="classAvto == 6">5ти дверные джипы, Toyota Land Cruiser; BMW X5, X6; Audi Q5, Q7; Rover Range Rover; Nissan Pathfinder; Nissan Murano, VW Touareg; Hyundai IX55 </p>
+
+                        <div class="calc__wraper2">
+                            <div class="calc__wraper">
+                                <p>выберите вид тонировки:</p>
+                                <label>
+                                    <input class="calc__chek" type="checkbox" v-model="calcImg[2]" > 
+                                    <p  class="calc__botton">лобовое стекло</p>      
+                                </label>
+                                <label>
+                                    <input class="calc__chek" type="checkbox" v-model="calcImg[1]" >
+                                    <p  class="calc__botton">два передних стекла</p>      
+                                </label>
+                                <label>
+                                    <input class="calc__chek" type="checkbox"  v-model="calcImg[0]" >
+                                    <p  class="calc__botton">задние двери, форточки и стекло</p>      
+                                </label>
+                            </div>
+                            <div class="calc__img">
+                                <img  class="calc__img-big" width="160" height="320" :src=' "img/class/"+classAvto+".png"'  alt="img/class/1.png">
+                                <img v-show="calcImg[2]"  class="calc__img-3" width="160" height="320" :src=' "img/class/"+classAvto+"-1.png" 'alt="img/class/1.png">
+                                <img v-show="calcImg[1]"  class="calc__img-3" width="160" height="320" :src=' "img/class/"+classAvto+"-2.png" '  alt="img/class/1.png">
+                                <img v-show="calcImg[0]"  class="calc__img-3" width="160" height="320" :src=' "img/class/"+classAvto+"-3.png"' alt="img/class/1.png">
+                            </div>
+                        </div>
+                        <p class="calc__text">
+                            ИТОГО: <br> 
+                            <span>Solartek, пленка черно-угольного оттенка:</span> <b> {{solartekPrice}} рублей</b><br>
+                            <span>Llumar, пленка черно-угольного оттенка:</span> <b>{{llumarkPrice}} рублей</b><br>
+                            <span>Зеркальные, цветные пленки с переходом цвета:</span> <b>{{mirrorkPrice}} рублей</b><br>
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <section id="contact" class="master__block-contact block-info">
+                <h2 class="block-info__title">Контакты</h2>
+                <p> 
+                    Время работы: <br>
+                    без перерыва и выходных<br>
+                    с 10:00 до 20:00<br>
+                </p>
+                <p>
+                    Адрес:<br>
+                    Ленинградское шоссе 65, автомойка ATW
+                </p>
+                <p>
+                    Телефон:<br>
+                    +79062794573
+                </p>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9c58be234ff10687af43fd2d7b4e26783ed1f698e644e67f934d33c55d20ae14&amp;source=constructor" width="100%" height="180" frameborder="0"></iframe>
+            </section>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
