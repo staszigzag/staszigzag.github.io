@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'font071fe832111e8e9d71e91082f0d06b61';
+    src:    url('https://nomail.com.ua/files/eot/071fe832111e8e9d71e91082f0d06b61.eot?#iefix') format('embedded-opentype'),
+            url('https://nomail.com.ua/files/woff/071fe832111e8e9d71e91082f0d06b61.woff') format('woff'),
+            url('https://nomail.com.ua/files/woff2/071fe832111e8e9d71e91082f0d06b61.woff2') format('woff2');
+}
+@font-face { 
+    font-family: 'FavoritCondC';  src: local('FavoritCondC'), url('https://nomail.com.ua/files/woff/071fe832111e8e9d71e91082f0d06b61.woff') format('woff'); 
+}
+
+
+li {
+    list-style-type: none;
+}
+*{
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color:inherit;
+}
+ul{
+    margin: 0 0;
+    padding: 0 0;
+}
+
+
+
+body {  
+    width: 2864px;
+    
+    padding-left: 24px;
+    padding-right: 53px;
+    background-color: #ffffff;
+}
+/* шапка------------------------------------------------------ */
+.heder{
+    font-family: 'FavoritCondC', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+}
+.heder__list{
+    /* border:  2px solid #0c81fd; */
+
+
+    display: flex;
+    width: 100%
+}
+.heder__item-list{
+    /* display: inline-block; */  
+
+    width: 350px;
+    height: 262px;
+    padding-top: 55px;
+
+}
+.heder__item-list--first{
+    width: 320px;
+    padding-top: 20px;
+
+
+    /* border:  2px solid #0c81fd; */
+
+}
+.heder__list ul{
+    padding-left: 30px;
+}
+.heder__btn-entry{
+    margin-top: 20px;
+}
+/* кнопка----------=-------------------------------------------ю */
+.btn{
+    width: 320px;
+    height: 106px ;
+    color: #ffffff;
+    background-color: #0c81fd;
+
+    font-family: 'FavoritCondC', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    /* letter-spacing: 4px; */
+}
+    
+.btn--entry{
+   width: 140PX ;
+   background-color: #ebebeb;
+   color: black;
+  
+}
+
+/* реализация анимаци через VUE */
+
+/* анимация при вставки компонента */
+.component-enter-active, .component-leave-active {
+    transition: all 1.5s ease;
+  }
+  .component-enter, .component-leave-to
+   {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+
+   
+  /* #app{
+    height: 100vh;
+} */

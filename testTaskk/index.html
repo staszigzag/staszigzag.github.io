@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>testTask</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  </head>
+  <body>
+      <div id="app" @wheel="whellHandler"> 
+
+          <header class="heder">
+            <ul class="heder__list">
+              <li  class=" heder__item-list heder__item-list--first"><a href="#"><img src="img/logo.png" alt=""></a></li>
+              <li  class="heder__item-list"><a href="#">ГЛАВНАЯ</a></li>
+              <li  class="heder__item-list"><a href="#">О НАС</a></li>
+              <li  class="heder__item-list"><a href="#">КАК ПОЛУЧИТЬ ИНВЕСТИЦИИ</a></li>
+              <li  class="heder__item-list"><a href="#">ИНВЕСТОРАМ</a></li>
+              <li  class="heder__item-list"><a href="#">СТАТУС ПРОЕКТОВ</a></li>
+              <li  class="heder__item-list"><a href="#">КОНТАКТЫ</a></li>
+              <li  class="heder__item-list heder__item-list--first">
+                <ul>
+                  <li><button class="heder__btn btn">ЗАЯВКА НА ИНВЕСТИЦИИ</button></li>
+                  <li><button class="heder__btn-entry btn btn--entry">ВХОД</button></li>
+                </ul>
+              </li>
+            </ul>
+          </header>
+        <!-- <div id="app" >    -->
+          <main >
+              <!-- appear=> анимация при первом рендере
+                out-in => сначало удаляется первый атолько потов вставляется второй -->
+            <transition name="component" mode="out-in" appear> 
+              <component :is="view"></component>
+            </transition>
+
+          </main>
+      
+      
+      
+      
+        </div>
+    <script src="dist/build.js"></script>
+  </body>
+</html>
