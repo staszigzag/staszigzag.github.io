@@ -1,0 +1,21 @@
+body{
+    /* width:1200px ; */
+    background-color: rgb(211, 206, 201);
+    padding: 0px;
+    margin: 0px;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+*{
+    box-sizing: border-box;
+}
+.cards__item{
+    margin: 15px;
+}
+
+
+/* скрыть элементы пока не будут готовы */
+[v-cloak] { 
+    display: none 
+}
