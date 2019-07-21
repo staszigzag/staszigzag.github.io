@@ -1,0 +1,9 @@
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+*{
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
